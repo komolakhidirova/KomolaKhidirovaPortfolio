@@ -1,0 +1,321 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Baskerville', serif;
+	margin: 0;
+	background-color: rgb(208, 208, 208);
+}
+
+.container-body {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+a {
+	color: #6f8084;
+	border-color: #6f8084;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #8da3a8;
+	border-color: #8da3a8;
+	background-color: transparent;
+}
+
+a:active {
+	color: #4d595c;
+	border-color: #4d595c;
+	background-color: transparent;
+}
+
+/* Header */
+.header {
+	font-size: 18px;
+	position: fixed;
+	width: 100%;
+	box-shadow: 0px 4px 21px -1px rgba(53, 53, 53, 0.13);
+	background-color: black;
+	color: white;
+	z-index: 50;
+}
+
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 30px;
+}
+
+.header__burger {
+	display: none;
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border: none;
+	background-color: transparent;
+	z-index: 2;
+}
+
+.header__burger span {
+	position: absolute;
+	width: 30px;
+	height: 3px;
+	background-color: white;
+	left: 5px;
+	transition: transform.5s, opacity 0.5s, background-color 0.5s;
+}
+
+.header.open .header__burger span {
+	background-color: white;
+}
+
+.header__burger span:nth-child(1) {
+	transform: translateY(-10px);
+}
+
+.header__burger span:nth-child(3) {
+	transform: translateY(10px);
+}
+
+.header.open .header__burger span:nth-child(2) {
+	opacity: 0;
+}
+
+.header.open .header__burger span:nth-child(1) {
+	transform: translateY(0) rotate(45deg);
+}
+
+.header.open .header__burger span:nth-child(3) {
+	transform: translateY(0) rotate(-45deg);
+}
+
+.logo {
+	display: block;
+	width: 200px;
+}
+
+.menu__list {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+	margin: 0;
+}
+
+.menu__item:not(:last-child) {
+	margin-right: 20px;
+}
+
+.menu__link {
+	color: inherit;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.menu__link:hover {
+	color: rgb(176, 176, 176);
+}
+
+.menu__link:active {
+	color: rgb(108, 107, 107);
+}
+
+/* Sections */
+.container {
+	margin: auto;
+	padding-bottom: 40px;
+	padding-top: 85px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.grid-3 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 30px;
+}
+
+.title {
+	margin-top: 0;
+	margin-bottom: 30px;
+	font-size: 40px;
+}
+
+.desc {
+	font-size: 18px;
+	font-weight: 400;
+	margin: 0;
+}
+
+/* About */
+.about {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+	background-color: #f8f8da;
+}
+
+.right {
+	margin-top: 20px;
+}
+
+.left {
+	margin-top: 20px;
+	height: 400px;
+	background-image: url(/src/assets/img/MyPhoto.jpg);
+	background-size: cover;
+	background-position: center;
+	border: 3px solid #767667;
+	border-radius: 10px;
+}
+
+/* Portfolio */
+.portfolio {
+	background-color: #f0f0e1;
+}
+
+.card-p {
+	background-color: white;
+	min-height: 100%;
+	border: 3px solid #79796b;
+	border-radius: 10px;
+	position: relative;
+	margin: 0;
+}
+
+.card-prew {
+	height: 200px;
+}
+
+.card-img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card-body {
+	padding: 20px;
+}
+
+.card-title {
+	font-size: 20px;
+	margin: 0;
+}
+
+.card-title::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.card-desc {
+	margin-bottom: 0;
+}
+
+/* Education */
+.education {
+	background-color: #ecf4f6;
+}
+
+.card-e {
+	display: flex;
+	min-height: 370px;
+	border: 3px solid #6f8084;
+	border-radius: 10px;
+	background-size: cover;
+	background-position: center;
+}
+
+/* Contact */
+.contacts {
+	background-color: #e9e9e9;
+}
+
+.wrap-c {
+	position: relative;
+	justify-content: flex-end;
+	display: flex;
+}
+
+.list {
+	list-style-type: none;
+}
+
+.list li {
+	padding: 10px 0;
+}
+
+.sa {
+	justify-content: space-between;
+	padding: 0 10px;
+}
+
+a svg {
+	width: 30px;
+	height: 30px;
+}
+
+a:hover svg {
+	opacity: 0.5;
+}
+
+@media (max-width: 992px) {
+	.header__burger,
+	.menu__list {
+		display: block;
+	}
+
+	.menu {
+		position: absolute;
+		left: -300px;
+		top: 0;
+		width: 300px;
+		height: 100vh;
+		background-color: black;
+		padding: 75px 20px 20px 20px;
+		transition: transform 1s;
+	}
+
+	.menu__link {
+		color: white;
+		font-size: 21px;
+		display: block;
+		padding: 10px 0;
+	}
+
+	.header.open .menu {
+		transform: translateX(100%);
+	}
+}
+
+@media (max-width: 750px) {
+	.grid-3 {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.about {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 500px) {
+	.grid-3 {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* fix classes, telephone and e-mail functions, */
